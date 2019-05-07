@@ -6,7 +6,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{2EF9D8F7-6B77-4B75-822B-6A53A922C30F}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>TikiSpawn</RootNamespace>
     <AssemblyName>TikiSpawn</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
